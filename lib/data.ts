@@ -10,6 +10,7 @@ import type {
   TimelineItem,
   WhyChooseItem,
 } from "@/types";
+import { IMAGES } from "@/lib/images";
 
 export const companyInfo = {
   name: "ONS Engineers Pvt. Ltd.",
@@ -56,36 +57,42 @@ export const timeline: TimelineItem[] = [
     title: "Foundation",
     description:
       "ONS Engineers established with a vision to deliver world-class HVAC and cleanroom solutions.",
+    image: IMAGES.timeline["2016"],
   },
   {
     year: "2018",
     title: "Pharma Expansion",
     description:
       "Expanded into pharmaceutical engineering with USFDA and WHO GMP compliant projects.",
+    image: IMAGES.timeline["2018"],
   },
   {
     year: "2020",
     title: "BMS Integration",
     description:
       "Launched Building Management Systems division for smart industrial automation.",
+    image: IMAGES.timeline["2020"],
   },
   {
     year: "2022",
     title: "International Reach",
     description:
       "Extended operations across 12 countries with turnkey project capabilities.",
+    image: IMAGES.timeline["2022"],
   },
   {
     year: "2024",
     title: "Innovation Hub",
     description:
       "Invested in cutting-edge validation and commissioning technologies.",
+    image: IMAGES.timeline["2024"],
   },
   {
     year: "2026",
     title: "Industry Leader",
     description:
       "Recognized as a premium engineering partner for Fortune 500 pharmaceutical companies.",
+    image: IMAGES.timeline["2026"],
   },
 ];
 
@@ -96,6 +103,7 @@ export const services: Service[] = [
     description:
       "Precision-engineered climate control for pharmaceutical cleanrooms, industrial plants, and mission-critical facilities.",
     icon: "Wind",
+    image: IMAGES.services.hvac,
   },
   {
     id: "cleanroom",
@@ -103,6 +111,7 @@ export const services: Service[] = [
     description:
       "ISO-classified environments designed, built, and validated for sterile pharmaceutical and biotech manufacturing.",
     icon: "Shield",
+    image: IMAGES.services.cleanroom,
   },
   {
     id: "bms",
@@ -110,6 +119,7 @@ export const services: Service[] = [
     description:
       "Intelligent building automation that maximizes energy efficiency while ensuring 24/7 operational reliability.",
     icon: "Cpu",
+    image: IMAGES.services.bms,
   },
   {
     id: "validation",
@@ -117,6 +127,7 @@ export const services: Service[] = [
     description:
       "Rigorous IQ/OQ/PQ protocols and documentation packages engineered for seamless regulatory audits.",
     icon: "CheckCircle",
+    image: IMAGES.services.validation,
   },
   {
     id: "testing",
@@ -124,6 +135,7 @@ export const services: Service[] = [
     description:
       "Rigorous performance testing and environmental monitoring for critical systems.",
     icon: "FlaskConical",
+    image: IMAGES.services.testing,
   },
   {
     id: "commissioning",
@@ -131,6 +143,7 @@ export const services: Service[] = [
     description:
       "End-to-end commissioning services ensuring systems meet design specifications.",
     icon: "Settings",
+    image: IMAGES.services.commissioning,
   },
   {
     id: "maintenance",
@@ -138,6 +151,7 @@ export const services: Service[] = [
     description:
       "Preventive and predictive maintenance programs for uninterrupted operations.",
     icon: "Wrench",
+    image: IMAGES.services.maintenance,
   },
   {
     id: "turnkey",
@@ -145,6 +159,7 @@ export const services: Service[] = [
     description:
       "Complete project delivery from conceptualization to qualification documentation.",
     icon: "Building2",
+    image: IMAGES.services.turnkey,
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import { useRef, useState, type MouseEvent } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { LucideIcon } from "@/lib/icons";
 import { services } from "@/lib/data";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -48,23 +49,36 @@ function ServiceCard({
           transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
         }}
         className={cn(
-          "preserve-3d glass-card group relative overflow-hidden rounded-2xl p-7 transition-all duration-400 sm:p-8",
+          "preserve-3d glass-card group relative overflow-hidden rounded-2xl transition-all duration-400",
           "hover:shadow-[0_24px_64px_rgba(0,194,255,0.12)]"
         )}
       >
-        <span className="absolute right-5 top-5 text-5xl font-bold text-white/3 transition-colors group-hover:text-primary/10">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-primary/8 blur-3xl transition-all duration-500 group-hover:bg-primary/15" />
+        <div className="relative h-36 overflow-hidden sm:h-40">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+          <span className="absolute right-4 top-4 text-4xl font-bold text-white/20">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        </div>
 
-        <div className="relative z-10">
-          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/10 bg-primary/8 transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/15 group-hover:shadow-[0_0_32px_rgba(0,194,255,0.2)]">
-            <LucideIcon name={service.icon} size={28} className="text-primary" />
+        <div className="relative p-7 sm:p-8">
+          <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-primary/8 blur-3xl transition-all duration-500 group-hover:bg-primary/15" />
+
+          <div className="relative z-10">
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/10 bg-primary/8 transition-all duration-300 group-hover:border-primary/30 group-hover:bg-primary/15 group-hover:shadow-[0_0_32px_rgba(0,194,255,0.2)]">
+              <LucideIcon name={service.icon} size={28} className="text-primary" />
+            </div>
+            <h3 className="text-lg font-bold sm:text-xl">{service.title}</h3>
+            <p className="mt-2.5 text-sm leading-relaxed text-muted">
+              {service.description}
+            </p>
           </div>
-          <h3 className="text-lg font-bold sm:text-xl">{service.title}</h3>
-          <p className="mt-2.5 text-sm leading-relaxed text-muted">
-            {service.description}
-          </p>
         </div>
       </div>
     </motion.div>

@@ -3,6 +3,7 @@ export interface Service {
   title: string;
   description: string;
   icon: string;
+  image: string;
 }
 
 export interface Industry {
@@ -40,6 +41,7 @@ export interface TimelineItem {
   year: string;
   title: string;
   description: string;
+  image: string;
 }
 
 export interface ProcessStep {

@@ -47,6 +47,12 @@ const IndustriesSection = dynamic(
   { ssr: false }
 );
 
+const GallerySection = dynamic(
+  () =>
+    import("@/components/sections/GallerySection").then((m) => m.GallerySection),
+  { ssr: false }
+);
+
 const WhyChooseUsSection = dynamic(
   () =>
     import("@/components/sections/WhyChooseUsSection").then(
@@ -144,6 +150,7 @@ export function HomePage() {
         <ServicesSection />
         <ProcessSection />
         <IndustriesSection />
+        <GallerySection />
         <WhyChooseUsSection />
         <ComplianceSection />
         <ProjectsSection />

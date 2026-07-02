@@ -8,6 +8,7 @@ import {
   timeline,
   vision,
 } from "@/lib/data";
+import { IMAGES } from "@/lib/images";
 import { SectionHeader } from "@/components/ui/section-header";
 
 export function AboutSection() {
@@ -33,7 +34,7 @@ export function AboutSection() {
             <div className="gradient-border overflow-hidden rounded-3xl">
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=85&auto=format&fit=crop"
+                  src={IMAGES.about}
                   alt="ONS Engineers team at work"
                   fill
                   className="object-cover"
@@ -114,33 +115,69 @@ export function AboutSection() {
                 >
                   <div className="flex-1 md:text-right">
                     {i % 2 === 0 && (
-                      <div className="glass-card rounded-2xl p-6 md:ml-auto md:max-w-md">
-                        <span className="text-2xl font-bold gradient-text">
-                          {item.year}
-                        </span>
-                        <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
-                        <p className="mt-2 text-sm text-muted">{item.description}</p>
+                      <div className="glass-card overflow-hidden rounded-2xl md:ml-auto md:max-w-md">
+                        <div className="relative h-40 w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="400px"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                        </div>
+                        <div className="p-6">
+                          <span className="text-2xl font-bold gradient-text">
+                            {item.year}
+                          </span>
+                          <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
+                          <p className="mt-2 text-sm text-muted">{item.description}</p>
+                        </div>
                       </div>
                     )}
                   </div>
                   <div className="relative z-10 mx-auto hidden h-4 w-4 rounded-full bg-primary glow-primary md:block" />
                   <div className="flex-1">
                     {i % 2 !== 0 && (
-                      <div className="glass-card rounded-2xl p-6 md:max-w-md">
-                        <span className="text-2xl font-bold gradient-text">
-                          {item.year}
-                        </span>
-                        <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
-                        <p className="mt-2 text-sm text-muted">{item.description}</p>
+                      <div className="glass-card overflow-hidden rounded-2xl md:max-w-md">
+                        <div className="relative h-40 w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="400px"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                        </div>
+                        <div className="p-6">
+                          <span className="text-2xl font-bold gradient-text">
+                            {item.year}
+                          </span>
+                          <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
+                          <p className="mt-2 text-sm text-muted">{item.description}</p>
+                        </div>
                       </div>
                     )}
                     {i % 2 === 0 && (
-                      <div className="glass-card rounded-2xl p-6 md:hidden">
-                        <span className="text-2xl font-bold gradient-text">
-                          {item.year}
-                        </span>
-                        <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
-                        <p className="mt-2 text-sm text-muted">{item.description}</p>
+                      <div className="glass-card overflow-hidden rounded-2xl md:hidden">
+                        <div className="relative h-40 w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="100vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+                        </div>
+                        <div className="p-6">
+                          <span className="text-2xl font-bold gradient-text">
+                            {item.year}
+                          </span>
+                          <h4 className="mt-2 text-lg font-semibold">{item.title}</h4>
+                          <p className="mt-2 text-sm text-muted">{item.description}</p>
+                        </div>
                       </div>
                     )}
                   </div>

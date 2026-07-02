@@ -1,3 +1,5 @@
+import { IMAGES } from "@/lib/images";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://onsengineers.com";
 
@@ -12,11 +14,9 @@ export const NAV_LINKS = [
 
 export const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
 
-export const OG_IMAGE =
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80";
+export const OG_IMAGE = IMAGES.og;
 
-export const HERO_POSTER =
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=85&auto=format&fit=crop";
+export const HERO_POSTER = IMAGES.hero;
 
 export const HERO_VIDEO =
   "https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_25fps.mp4";

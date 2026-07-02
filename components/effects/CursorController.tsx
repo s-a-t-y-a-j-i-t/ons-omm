@@ -7,12 +7,13 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 export function CursorController() {
   const reducedMotion = useReducedMotion();
   const isFinePointer = useMediaQuery("(pointer: fine)");
+  const isDesktop = useMediaQuery("(min-width: 1025px)");
 
   useEffect(() => {
-    const enabled = isFinePointer && !reducedMotion;
+    const enabled = isFinePointer && isDesktop && !reducedMotion;
     document.body.classList.toggle("has-custom-cursor", enabled);
     return () => document.body.classList.remove("has-custom-cursor");
-  }, [isFinePointer, reducedMotion]);
+  }, [isFinePointer, isDesktop, reducedMotion]);
 
   return null;
 }
